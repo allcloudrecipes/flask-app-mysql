@@ -5,14 +5,14 @@ from werkzeug import generate_password_hash, check_password_hash
 from flask import Flask
 from flaskext.mysql import MySQL
 app = Flask(__name__)
-app.secret_key = "secret key"
+app.secret_key = "UZc4NNpys83SLHTb"
 
 mysql = MySQL() 
 
 app.config['MYSQL_DATABASE_USER'] = 'sahbi'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'UZc4NNpys83SLHTb'
-app.config['MYSQL_DATABASE_DB'] = 'mysb'
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+app.config['MYSQL_DATABASE_DB'] = 'mydb'
+app.config['MYSQL_DATABASE_HOST'] = 'sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com:3306'
 mysql.init_app(app)
 
 class Results(Table):
