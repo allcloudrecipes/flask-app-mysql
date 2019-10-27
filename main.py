@@ -27,7 +27,7 @@ class Results(Table):
 def add_task_view():
 	return render_template('add.html')
 		
-@app.route('/task', methods=['POST'])
+@app.route('/add', methods=['POST'])
 def add_task():
 	try:		
 		_name = request.form['inputName']
