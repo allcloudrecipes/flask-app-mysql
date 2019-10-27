@@ -12,7 +12,7 @@ mysql = MySQL()
 app.config['MYSQL_DATABASE_USER'] = 'sahbi'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'UZc4NNpys83SLHTb'
 app.config['MYSQL_DATABASE_DB'] = 'mydb'
-app.config['MYSQL_DATABASE_HOST'] = 'sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com:3306'
+app.config['MYSQL_DATABASE_HOST'] = 'sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com'
 mysql.init_app(app)
 
 class Results(Table):
