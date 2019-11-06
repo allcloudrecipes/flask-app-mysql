@@ -4,16 +4,16 @@ from flask import flash, render_template, request, redirect
 from werkzeug import generate_password_hash, check_password_hash
 from flask import Flask
 from flaskext.mysql import MySQL
-application = Flask(__name__)
-application.secret_key = "UZc4NNpys83SLHTb"
+app = Flask(__name__)
+app.secret_key = "UZc4NNpys83SLHTb"
 
 mysql = MySQL() 
 
-application.config['MYSQL_DATABASE_USER'] = 'sahbi'
-application.config['MYSQL_DATABASE_PASSWORD'] = 'UZc4NNpys83SLHTb'
-application.config['MYSQL_DATABASE_DB'] = 'mydb'
-application.config['MYSQL_DATABASE_HOST'] = 'sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com'
-mysql.init_app(application)
+app.config['MYSQL_DATABASE_USER'] = 'sahbi'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'UZc4NNpys83SLHTb'
+app.config['MYSQL_DATABASE_DB'] = 'mydb'
+app.config['MYSQL_DATABASE_HOST'] = 'sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com'
+mysql.init_app(app)
 
 class Results(Table):
     task_id = Col('Id', show=False)
@@ -23,11 +23,11 @@ class Results(Table):
 
 
 
-@application.route('/new_task')
+@app.route('/new_task')
 def add_task_view():
 	return render_template('add.html')
 		
-@application.route('/add', methods=['POST'])
+@app.route('/add', methods=['POST'])
 def add_task():
 	try:		
 		_name = request.form['inputName']
@@ -50,7 +50,7 @@ def add_task():
 		cursor.close() 
 		conn.close()
 		
-@application.route('/')
+@app.route('/')
 def tasks():
 	try:
 		conn = mysql.connect()
@@ -67,7 +67,7 @@ def tasks():
 		conn.close()
 
 
-@application.route('/delete/<int:id>')
+@app.route('/delete/<int:id>')
 def delete_task(id):
 	try:
 		conn = mysql.connect()
