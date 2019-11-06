@@ -11,3 +11,4 @@ sudo pip3 install Flask-Table
 sudo pip3 install flask-mysql
 sudo pip3 install gunicorn
 cp /home/ec2-user/flask-app-mysql/flask-app.service /etc/systemd/system/
+sudo systemctl start flask-app
