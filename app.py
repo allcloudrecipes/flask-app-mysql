@@ -13,7 +13,7 @@ application.config['MYSQL_DATABASE_USER'] = 'sahbi'
 application.config['MYSQL_DATABASE_PASSWORD'] = 'UZc4NNpys83SLHTb'
 application.config['MYSQL_DATABASE_DB'] = 'mydb'
 application.config['MYSQL_DATABASE_HOST'] = 'sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com'
-mysql.init_application(application)
+mysql.init_app(application)
 
 class Results(Table):
     task_id = Col('Id', show=False)
