@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/sites/flaskapp
+    destination: /home/ec2-user/flaskapp
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
