@@ -2,14 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/flaskapp
+    destination: /home/ec2-user/flask-app-mysql
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: scripts/change_permissions.sh
+    - location: scripts/deploy_application.sh
       timeout: 300
       runas: root
   ApplicationStart:
