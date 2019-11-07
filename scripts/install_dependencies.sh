@@ -1,4 +1,4 @@
 #!/bin/bash
-sudo yum update -y
-sudo yum install python3 -y
-sudo yum install python-pip3 -y
+yum update -y
+yum install python3 -y
+yum install python-pip3 -y

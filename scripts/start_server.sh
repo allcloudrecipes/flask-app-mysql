@@ -1,3 +1,3 @@
 #!/bin/bash
-sudo systemctl start flask-app
-sudo systemctl enable flask-app
+systemctl start flask-app
+systemctl enable flask-app
