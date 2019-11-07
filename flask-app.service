@@ -3,7 +3,7 @@ Description=Flask App Demo
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/gunicorn -b :8080 --chdir /home/ec2-user/flask-app-mysql/ wsgi:app
+ExecStart=/usr/local/bin/gunicorn -b :80 --chdir /home/ec2-user/flask-app-mysql/ wsgi:app
 
 [Install]
 WantedBy=multi-user.target
