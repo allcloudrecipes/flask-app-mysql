@@ -1,0 +1,1 @@
+mysql --password=UZc4NNpys83SLHTb --user=sahbi --host=sahbi-db-server.cxe7apfwy1cy.us-east-2.rds.amazonaws.com > /home/ec2-user/flask-app-mysql/db.sql
