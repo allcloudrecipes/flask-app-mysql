@@ -1,5 +1,6 @@
 #!/bin/bash
-# isExistApp=`pgrep flask-app`
-# if [[ -n  $isExistApp ]]; then
-sudo systemctl stop flask-app       
-#fi
+flaskapp=$(systemctl | grep flask-app)
+if  [[ $flaskapp ]]
+ then
+ sudo systemctl stop flask-app       
+fi
