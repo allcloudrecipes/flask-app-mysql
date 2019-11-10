@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /home/ec2-user/flask-app-mysql
 hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 60
+      runas: root
   AfterInstall:
     - location: scripts/deploy_database.sh
       timeout: 60
